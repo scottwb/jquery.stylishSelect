@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Demo: jquery.stylishSelect</title>
+    <link rel="stylesheet" href="jquery.stylishSelect.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.stylishSelect.js"></script>
+    <style>
+      table {
+        padding-bottom: 8px;
+        border-bottom: solid black 1px;
+      }
+      td {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      select {
+        width: 225px;
+      }
+      .ssSelectWrapper ul {
+        width: 223px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Demo: jquery.stylishSelect</h1>
+    You can use CSS to set the style of the text label, the open button, the drop-down, and the options inside the drop-down, in normal, hovered, and open states. This example shows:
+    <ul>
+      <li>Hiding the border, but not the arrow, in the normal state.</li>
+      <li>Showing the border (and arrow), when the select is hovered.</li>
+      <li>Showing the border (and arrow), when the select is open.</li>
+    </ul>
+    But any other styles may easily be applied to these states. The options in the select can also be styled in the normal, hovered, and selected states. You can also tinker with the style of the ul for placement, borders, etc of the drop-down.
+    <br/><br/><br/>
+
+    <table>
+      <tr>
+        <td>Choose your favorite dinner</td>
+        <td>Choose your favorite dessert</td>
+      </tr>
+      <tr>
+        <td>
+          <select>
+            <option>Chicken Burger</option>
+            <option>Plain Hamburger</option>
+            <option>Cheesburger</option>
+            <option>Double Cheesburger</option>
+            <option>Triple Cheesburger</option>
+            <option>Bacon Cheesburger</option>
+            <option>Double Bacon Cheesburger</option>
+            <option selected="selected">Triple Bacon Cheesburger</option>
+            <option>Duck Burger</option>
+            <option>Lamb Burger</option>
+            <option>Lamb Burger</option>
+            <option>Horse Burger</option>
+            <option>Boca "Burger"</option>
+          </select>
+        </td>
+        <td>
+          <select>
+            <option>Meat</option>
+            <option selected="selected">Candy</option>
+            <option>Meat Candy</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+    //<![CDATA[
+      $(function() {$('select').stylishSelect();})
+    //]]>
+    </script>
+
+  </body>
+</html>

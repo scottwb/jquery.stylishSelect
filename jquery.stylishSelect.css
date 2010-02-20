@@ -1,0 +1,88 @@
+
+
+.stylishSelectWrapper {
+  position: relative;
+  vertical-align: top; }
+  .stylishSelectWrapper select {
+    border: none;
+    margin: 0;
+    padding: 0; }
+    .stylishSelectWrapper select.ssHidden {
+      opacity: 0;
+      z-index: -1;
+      position: relative; }
+  .stylishSelectWrapper iframe {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 100%; }
+  .stylishSelectWrapper .ssSelectWrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
+    height: 23px; }
+    .stylishSelectWrapper .ssSelectWrapper .ssText {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 21px;
+      height: 21px;
+      padding: 0px 3px;
+      border: solid white 1px;
+      border-right: none;
+      background-color: white;
+      overflow: hidden;
+      float: none;
+      position: absolute;
+      z-index: 100; }
+    .stylishSelectWrapper .ssSelectWrapper .ssOpenButton {
+      position: absolute;
+      right: 0px;
+      width: 21px;
+      height: 21px;
+      background: url(select_menu_arrow.png) no-repeat center center;
+      z-index: 100;
+      display: block;
+      border-top: solid white 1px;
+      border-bottom: solid white 1px;
+      border-right: solid white 1px; }
+    .stylishSelectWrapper .ssSelectWrapper ul {
+      position: absolute;
+      top: 23px;
+      left: 0px;
+      list-style: none;
+      display: none;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+      z-index: 100;
+      width: 95%;
+      background-color: white;
+      border: solid #b2afa7 1px;
+      height: 150px; }
+      .stylishSelectWrapper .ssSelectWrapper ul li {
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 21px;
+        padding-bottom: 0px;
+        border-top: dotted #b2afa7 1px; }
+        .stylishSelectWrapper .ssSelectWrapper ul li:first-child {
+          border-top: none; }
+        .stylishSelectWrapper .ssSelectWrapper ul li a {
+          color: #40484d;
+          background-color: white;
+          display: block;
+          padding: 5px;
+          text-decoration: none; }
+          .stylishSelectWrapper .ssSelectWrapper ul li a:hover, .stylishSelectWrapper .ssSelectWrapper ul li a.selected {
+            background: #F5F4F2; }
+    .stylishSelectWrapper .ssSelectWrapper:hover .ssText,     .stylishSelectWrapper .ssSelectWrapper.expanded .ssText {
+      border-color: #b2afa7; }
+    .stylishSelectWrapper .ssSelectWrapper:hover .ssOpenButton,     .stylishSelectWrapper .ssSelectWrapper.expanded .ssOpenButton {
+      border-top: solid #b2afa7 1px;
+      border-bottom: solid #b2afa7 1px;
+      border-right: solid #b2afa7 1px; }
+
