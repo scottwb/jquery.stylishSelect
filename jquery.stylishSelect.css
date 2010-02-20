@@ -85,4 +85,11 @@
       border-top: solid #b2afa7 1px;
       border-bottom: solid #b2afa7 1px;
       border-right: solid #b2afa7 1px; }
-
+    .stylishSelectWrapper .ssSelectWrapper.disabled .ssText {
+      color: #b2afa7;
+      border-color: white !important; }
+    .stylishSelectWrapper .ssSelectWrapper.disabled .ssOpenButton {
+      background: none !important;
+      border-top: solid white 1px !important;
+      border-bottom: solid white 1px !important;
+      border-right: solid white 1px !important; }

@@ -35,11 +35,17 @@
         };
         
         var _enableSelect = function(elem) {
+            var $select  = $(elem);
+            var $wrapper = $select.siblings('.ssSelectWrapper');
             elem.disabled = false;
+            $wrapper.removeClass('disabled');
         };
         
         var _disableSelect = function(elem) {
+            var $select  = $(elem);
+            var $wrapper = $select.siblings('.ssSelectWrapper');
             elem.disabled = true;
+            $wrapper.addClass('disabled');
         };
 
         // Clears out all options and repopulates them from the original
@@ -47,6 +53,11 @@
         var _updateOptions = function(elem) {
             var $select = $(elem);
             var $wrapper = $select.siblings('.ssSelectWrapper');
+
+            // If select is disabled, set the wrapper to disabled.
+            if (elem.disabled) {
+                $wrapper.addClass('disabled');
+            }
 
             // Clear out options and repopulate with new ones.
             var $ul = $wrapper.find('ul').find('li').remove().end().hide();
@@ -60,24 +71,31 @@
 
             // Add click handlers for the options.
             $ul.find('a').click(function() {
-                $('a.selected', $wrapper).removeClass('selected');
-                $(this).addClass('selected');
+                var $link = $(this);
+                var linkIndex = $link.attr('index');
 
-                // Fire the select's onchange event.
-                if (($select[0].selectedIndex != $(this).attr('index')) &&
-                    $select[0].onchange) {
-                    $select[0].selectedIndex = $(this).attr('index');
-                    $select[0].onchange();
+                // Unselect previous option, select this option, and
+                // update the menu's text label.
+                $('a.selected', $wrapper).removeClass('selected');
+                $link.addClass('selected');
+                $('span:eq(0)', $wrapper).html($link.html());
+
+                // Set the newly selected option in the original select
+                /// and fire the select's onchange event.
+                if ((elem.selectedIndex != linkIndex) && elem.onchange) {
+                    elem.selectedIndex = linkIndex;
+                    elem.onchange();
                 }
-                $select[0].selectedIndex = $(this).attr('index');
-                $('span:eq(0)', $wrapper).html($(this).html());
-                $ul.hide();
+
+                // Hide the drop-down list.
                 $wrapper.removeClass('expanded');
+                $ul.hide();
+
                 return false;
             });
 
             // Set the default
-            $('a:eq(' + $select[0].selectedIndex + ')', $ul).click();
+            $('a:eq(' + elem.selectedIndex + ')', $ul).click();
         };
  
         // Initialize the given select element with stylishSelect.
@@ -141,6 +159,10 @@
             // Add click handler to text/open-button that expands/collapses
             // the drop-down.
             $('div', $wrapper).click(function() {
+                if ($wrapper.hasClass('disabled')) {
+                    return false;
+                }
+
                 var $ul = $(this).siblings('ul');
 
                 if ($ul.css('display') == 'none') {
