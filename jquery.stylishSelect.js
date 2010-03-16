@@ -119,7 +119,7 @@
             );
 
             // Have to wait until after wrapping to get the correct width.
-            var width = $select.width();
+            var width = parseInt($select.css('width'));
 
             // Add a class to hide the select and add our custom HTML after it.
             $select.addClass('ssHidden').after(
@@ -142,7 +142,7 @@
             // the width of the whole thing minus the width of the
             // open button.
             $('.ssText, .ssSelectWrapper ul', $wrapper).width(
-                width - $('.ssOpenButton', $wrapper).width()
+                width - parseInt($('.ssOpenButton', $wrapper).css('width'))
             );
 
             // Add the standard iframe hack for IE6 to hide the select.
