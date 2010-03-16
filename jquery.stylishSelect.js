@@ -62,11 +62,20 @@
             // Clear out options and repopulate with new ones.
             var $ul = $wrapper.find('ul').find('li').remove().end().hide();
             $('option', $select).each(function(i) {
-                $ul.append(
-                    '<li><a href="#" index="' + i + '">' +
-                    this.text                            +
-                    '</a></li>'
-                );
+                if (this.disabled) {
+                    $ul.append(
+                        '<li><span class="disabled" index="' + i + '">' +
+                        this.text                                       +
+                        '</span></li>'
+                    );
+                }
+                else {
+                    $ul.append(
+                        '<li><a href="#" index="' + i + '">' +
+                        this.text                            +
+                        '</a></li>'
+                    );
+                }
             });
 
             // Add click handlers for the options.

@@ -79,6 +79,11 @@
           text-decoration: none; }
           .stylishSelectWrapper .ssSelectWrapper ul li a:hover, .stylishSelectWrapper .ssSelectWrapper ul li a.selected {
             background: #F5F4F2; }
+        .stylishSelectWrapper .ssSelectWrapper ul li span.disabled {
+          color: #b2afa7;
+          background-color: white;
+          display: block;
+          padding: 5px; }
     .stylishSelectWrapper .ssSelectWrapper:hover .ssText,     .stylishSelectWrapper .ssSelectWrapper.expanded .ssText {
       border-color: #b2afa7; }
     .stylishSelectWrapper .ssSelectWrapper:hover .ssOpenButton,     .stylishSelectWrapper .ssSelectWrapper.expanded .ssOpenButton {
