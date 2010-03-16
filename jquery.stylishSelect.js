@@ -91,9 +91,9 @@
 
                 // Set the newly selected option in the original select
                 /// and fire the select's onchange event.
-                if ((elem.selectedIndex != linkIndex) && elem.onchange) {
+                if ((elem.selectedIndex != linkIndex)) {
                     elem.selectedIndex = linkIndex;
-                    elem.onchange();
+                    $(elem).trigger('change');
                 }
 
                 // Hide the drop-down list.
