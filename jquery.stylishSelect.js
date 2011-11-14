@@ -138,10 +138,9 @@
                 width : width + 'px'
             });
 
-            // Set the width of the text area and drop-dwon ul to be
-            // the width of the whole thing minus the width of the
-            // open button.
-            $('.ssText, .ssSelectWrapper ul', $wrapper).width(
+            // Set the width of the text area wrapper to be the width of
+            // the whole thing minus the width of the open button.
+            $('.ssText', $wrapper).width(
                 width - parseInt($('.ssOpenButton', $wrapper).css('width'))
             );
 
